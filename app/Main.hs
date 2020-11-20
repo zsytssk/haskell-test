@@ -1,6 +1,8 @@
 module Main where
 
-import Lib
+-- import Lib (boolToString, in_range, someFunc)
+import Lib (boolToString, in_range, someFunc)
 
 main :: IO ()
-main = () => print someFunc
+main =
+  putStrLn (show someFunc)
