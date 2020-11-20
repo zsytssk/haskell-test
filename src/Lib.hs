@@ -17,5 +17,6 @@ boolToString False = "FALSE"
 add :: Num a => a -> a -> a
 add a b = a + b
 
+fac :: (Eq a, Num a) => a -> Bool
 fac 0 = False
 fac _ = True

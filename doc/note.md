@@ -2,7 +2,9 @@ https://www.youtube.com/watch?v=y6xiaSkVlvs&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9b
 
 ## 2020-11-19 18:29:06
 
-- @ques genertic
+- @ques generatic
+
+- @ques accumulator
 
 - @ques vscode 插件 代码修好了 语法错误还在
 
