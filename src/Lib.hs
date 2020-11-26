@@ -1,7 +1,7 @@
 module Lib (someFunc, in_range, boolToString) where
 
 -- someFunc :: Int
-someFunc = halvePerfectly 10
+someFunc = addTuples [(1, 2), (2, 4), (3, 5)]
 
 in_range :: Int -> Int -> Int -> Bool
 in_range min max x =
@@ -23,18 +23,7 @@ fac n = aux n 1
       | n <= 1 = acc
       | otherwise = aux (n -1) (n * acc)
 
--- asc :: Int -> Int -> [Int]
---   asc n m
---     | m < n = []
---     | m == n = [m]
---     | m > n = n : asc (n + 1) m
-asc :: Int -> Int -> [Int]
-asc n m
-  | m < n = []
-  | m == n = [m]
-  | m > n = n : asc (n + 1) m
-
-halvePerfectly :: Integer -> Maybe Integer
-halvePerfectly i
-  ｜ (i `mod` 2 == 0) = Just (i `div` 2)
-  ｜ otherwise = Nothing
+addTuples :: [(Int, Int)] -> Int
+addTuples [] = 0
+addTuples (t : tx) =
+  let (x, y) = t in (x + y) + addTuples tx

@@ -1,8 +1,12 @@
-https://www.youtube.com/watch?v=AN-P1-IvsKQ&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=4
+https://www.youtube.com/watch?v=Cxkqrg8FCt8&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=5
+http://learnyouahaskell.com/chapters
 
 ## 2020-11-25 11:08:52
 
+- @ques 怎么求和 [(1, 2), (2, 4), (3, 5)]
+
 - @ques Haskell async/await
+- @ques Haskell http
 
 - ` n : asc (n + 1) m` 可以将还未完成的计算 累计在一起
 

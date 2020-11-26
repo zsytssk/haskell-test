@@ -1,3 +1,12 @@
+## add tuples
+
+```hs
+addTuples :: [(Int, Int)] -> Int
+addTuples [] = 0
+addTuples (t : tx) =
+  let (x, y) = t in (x + y) + addTuples tx
+```
+
 ## int to string
 
 show
