@@ -1,3 +1,41 @@
+## 是否递增
+
+```hs
+isAsc :: [Int] -> Bool
+isAsc [] = True
+isAsc [_,[]] = True
+isAsc (x : xs)
+  | x > (head xs) = False
+  | otherwise = isAsc xs
+
+isAsc1 :: [Int] -> Bool
+isAsc1 [] = True
+isAsc1 [x] = True
+isAsc1 (x : y : xs) =
+  (x <= y) && isAsc1 (xs)
+
+
+
+```
+
+## 数组去重
+
+```hs
+nub :: (Eq a) => [a] -> [a]
+nub [] = []
+nub (x : xs)
+  | elemInArr x xs = nub xs
+  | otherwise = x : (nub xs)
+```
+
+## element in arr
+
+```hs
+elemInArr :: (Eq a) => a -> [a] -> Bool
+elemInArr _ [] = False
+elemInArr e (x : xs) = (e == x) || (e `elemInArr` xs)
+```
+
 ## add tuples
 
 ```hs

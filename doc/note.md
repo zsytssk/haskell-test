@@ -1,6 +1,19 @@
 https://www.youtube.com/watch?v=Cxkqrg8FCt8&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=5
 http://learnyouahaskell.com/chapters
 
+## 2020-11-27 13:35:39
+
+(x-y/n-m) > 0
+数组中去掉某个元素
+如何保存原来的素组
+
+下一个是 -1 还是 加 1
+
+一开始就把数组创建 然后在去一个个的判断 目标数组 有没有
+包含当前数组就可以了
+
+怎么把多个语句 组合成一个函数
+
 ## 2020-11-25 11:08:52
 
 - @ques 怎么求和 [(1, 2), (2, 4), (3, 5)]
