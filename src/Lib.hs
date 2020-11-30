@@ -1,7 +1,13 @@
 module Lib (someFunc, in_range, boolToString) where
 
 -- someFunc :: Int
-someFunc = isAsc []
+someFunc = filter_odd [1, 2, 3, 4]
+
+filter_odd :: [Int] -> [Int]
+filter_odd [] = []
+filter_odd (x : xs)
+  | (x `mod` 2 == 0) = x : filter_odd xs
+  | otherwise = filter_odd xs
 
 in_range :: Int -> Int -> Int -> Bool
 in_range min max x =
@@ -45,8 +51,7 @@ elemInArr _ [] = False
 elemInArr e (x : xs) = (e == x) || (e `elemInArr` xs)
 
 hasPath :: [(Int, Int)] -> Int -> Int -> Bool
-hasPath [] n m = False
-hasPath [(x, y)] n m = x == n && y == m
-hasPath ((x, y) : xs) n m
-  | x == n && ((x - y) `div` (n - m) > 0) = hasPath ((x, y) : xs) (n + 1) m
-  | otherwise = False
+hasPath nodes s e
+  | s == e = True
+  | s < e = elem (s, s + 1) nodes && hasPath nodes (s + 1) e
+  | s > e = elem (s, s -1) nodes && hasPath nodes (s -1) e

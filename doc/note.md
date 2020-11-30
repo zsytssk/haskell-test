@@ -1,5 +1,20 @@
-https://www.youtube.com/watch?v=Cxkqrg8FCt8&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=5
+https://www.youtube.com/watch?v=ccExc6rrUN8&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=6
 http://learnyouahaskell.com/chapters
+
+## 2020-11-30 09:48:20
+
+- @ques hasPath
+
+  - `[(n, m) | (n, m) <- xs, n /= x]`
+  - `let .. in`
+    - 赋值 和 where 对应
+  - `or`
+    - `or [x]`只要数组中有一个为 true 就为 true
+  - `n /= x`
+    - 是不等于的意思吗, 应该是的
+
+- @ques 整除的标示是什么
+  - `mod`
 
 ## 2020-11-27 13:35:39
 
@@ -12,7 +27,8 @@ http://learnyouahaskell.com/chapters
 一开始就把数组创建 然后在去一个个的判断 目标数组 有没有
 包含当前数组就可以了
 
-怎么把多个语句 组合成一个函数
+- 怎么把多个语句 组合成一个函数
+  - where
 
 ## 2020-11-25 11:08:52
 

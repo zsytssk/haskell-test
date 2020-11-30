@@ -1,3 +1,14 @@
+## filter_odd
+
+```hs
+filter_odd :: [Int] -> [Int]
+filter_odd [] = []
+filter_odd (x : xs)
+-- 整除
+  | (x `mod` 2 == 0) = x : filter_odd xs
+  | otherwise = filter_odd xs
+```
+
 ## 是否递增
 
 ```hs
