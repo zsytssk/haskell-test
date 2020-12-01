@@ -1,4 +1,4 @@
-https://www.youtube.com/watch?v=ccExc6rrUN8&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=6
+https://www.youtube.com/watch?v=m12c99qgHBU&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=7
 http://learnyouahaskell.com/chapters
 
 ## 2020-11-30 09:48:20

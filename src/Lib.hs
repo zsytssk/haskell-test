@@ -1,7 +1,7 @@
 module Lib (someFunc, in_range, boolToString) where
 
 -- someFunc :: Int
-someFunc = filter_odd [1, 2, 3, 4]
+someFunc = doubleList [1, 2, 3, 4, 5, 6, 7, 8]
 
 filter_odd :: [Int] -> [Int]
 filter_odd [] = []
@@ -49,6 +49,8 @@ nub (x : xs)
 elemInArr :: (Eq a) => a -> [a] -> Bool
 elemInArr _ [] = False
 elemInArr e (x : xs) = (e == x) || (e `elemInArr` xs)
+
+doubleList = map (\x -> x * 2)
 
 hasPath :: [(Int, Int)] -> Int -> Int -> Bool
 hasPath nodes s e
