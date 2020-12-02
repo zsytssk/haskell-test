@@ -1,7 +1,7 @@
 module Lib (someFunc, in_range, boolToString) where
 
 -- someFunc :: Int
-someFunc = addt 2
+someFunc = isAll 2 [2, 3, 4]
 
 filter_odd :: [Int] -> [Int]
 filter_odd [] = []
@@ -60,5 +60,4 @@ hasPath nodes s e
 
 f xs = map (\x -> x + 1) $ filter (\x -> x > 1) xs
 
-mapb :: (a -> a) -> a -> [a] -> [a]
-mapb f = foldr (\x -> (:) f x)
+isAll e = foldr (\x acc -> (&&) $ x == e) True

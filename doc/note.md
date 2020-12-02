@@ -5,6 +5,9 @@ http://learnyouahaskell.com/chapters
 
 - @ques `map f = foldr ((:) . f) []` 如何理解
 
+  - `.` 是干嘛的
+  - `(:)` 是干嘛的
+
 - @ques hasPath
 
   - `[(n, m) | (n, m) <- xs, n /= x]`
