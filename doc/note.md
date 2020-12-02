@@ -3,10 +3,14 @@ http://learnyouahaskell.com/chapters
 
 ## 2020-11-30 09:48:20
 
-- @ques `map f = foldr ((:) . f) []` 如何理解
+- @ques
 
-  - `.` 是干嘛的
-  - `(:)` 是干嘛的
+  - `isAll e = foldr (\x -> (&&) $ x == e) True` 怎么理解
+  - `map f = foldr ((:) . f) []` 如何理解
+
+    - `.` 是干嘛的
+    - `(:)` 是干嘛的
+    - $ 和 . 的左右到底是什么
 
 - @ques hasPath
 

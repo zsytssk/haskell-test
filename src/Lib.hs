@@ -1,7 +1,8 @@
 module Lib (someFunc, in_range, boolToString) where
 
 -- someFunc :: Int
-someFunc = isAll 2 [2, 3, 4]
+-- someFunc = isAll 2 [2, 2, 2]
+someFunc = (2 == 2 && True)
 
 filter_odd :: [Int] -> [Int]
 filter_odd [] = []
@@ -50,7 +51,7 @@ elemInArr :: (Eq a) => a -> [a] -> Bool
 elemInArr _ [] = False
 elemInArr e (x : xs) = (e == x) || (e `elemInArr` xs)
 
-doubleList = map (\x -> x * 2)
+-- doubleList = map (\x -> x * 2)
 
 hasPath :: [(Int, Int)] -> Int -> Int -> Bool
 hasPath nodes s e
@@ -58,6 +59,4 @@ hasPath nodes s e
   | s < e = elem (s, s + 1) nodes && hasPath nodes (s + 1) e
   | s > e = elem (s, s -1) nodes && hasPath nodes (s -1) e
 
-f xs = map (\x -> x + 1) $ filter (\x -> x > 1) xs
-
-isAll e = foldr (\x acc -> (&&) $ x == e) True
+map f = foldr ((:) . f) []

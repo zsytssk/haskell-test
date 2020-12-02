@@ -1,12 +1,15 @@
 ## 合并函数
 
 ```hs
+
+map2D = map . map
+
 f xs = map (\x -> x + 1) $ filter (\x -> x > 1) xs
 
 count e =
   foldr (\x acc -> if e == x then acc + 1 else acc) 0
 
-isAll e = foldr (\x acc -> (&&) $ x == e) True
+isAll e = foldr (\x -> (&&) $ x == e) True
 
 length = foldr (\x -> (+) 1) 0
 
