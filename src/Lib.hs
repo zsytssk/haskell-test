@@ -1,7 +1,7 @@
 module Lib (someFunc, in_range, boolToString) where
 
 -- someFunc :: Int
-someFunc = doubleList [1, 2, 3, 4, 5, 6, 7, 8]
+someFunc = addt 2
 
 filter_odd :: [Int] -> [Int]
 filter_odd [] = []
@@ -57,3 +57,8 @@ hasPath nodes s e
   | s == e = True
   | s < e = elem (s, s + 1) nodes && hasPath nodes (s + 1) e
   | s > e = elem (s, s -1) nodes && hasPath nodes (s -1) e
+
+f xs = map (\x -> x + 1) $ filter (\x -> x > 1) xs
+
+mapb :: (a -> a) -> a -> [a] -> [a]
+mapb f = foldr (\x -> (:) f x)

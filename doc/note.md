@@ -1,7 +1,9 @@
-https://www.youtube.com/watch?v=m12c99qgHBU&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=7
+https://www.youtube.com/watch?v=0qvi_sTJbEw&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=9
 http://learnyouahaskell.com/chapters
 
 ## 2020-11-30 09:48:20
+
+- @ques `map f = foldr ((:) . f) []` 如何理解
 
 - @ques hasPath
 
