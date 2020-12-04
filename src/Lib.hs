@@ -1,8 +1,9 @@
 module Lib (someFunc, in_range, boolToString) where
 
 -- someFunc :: Int
--- someFunc = isAll 2 [2, 2, 2]
-someFunc = (2 == 2 && True)
+someFunc = rev [1, 2, 3]
+
+test = map (:) [1, 2, 3]
 
 filter_odd :: [Int] -> [Int]
 filter_odd [] = []
@@ -59,4 +60,17 @@ hasPath nodes s e
   | s < e = elem (s, s + 1) nodes && hasPath nodes (s + 1) e
   | s > e = elem (s, s -1) nodes && hasPath nodes (s -1) e
 
-map f = foldr ((:) . f) []
+isAll e = foldr (\x -> (&&) $ x == e) True
+
+rev :: [a] -> [a]
+rev = foldl (flip (:)) []
+
+mapTest f = foldr (\x -> ((:) . f) x) []
+
+prefixes :: [a] -> [[a]]
+prefixes =
+  foldr (\x -> (:) [x]) []
+
+-- prefixes :: [a] -> [[a]]
+-- prefixes =
+--   foldr (\x acc -> [x] : (map ((:) x) acc)) []

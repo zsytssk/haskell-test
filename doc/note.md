@@ -1,7 +1,27 @@
-https://www.youtube.com/watch?v=0qvi_sTJbEw&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=9
+https://www.youtube.com/watch?v=46dksIrx6jQ&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=11
 http://learnyouahaskell.com/chapters
 
+## 2020-12-03 20:33:58
+
+- @ques 下面代码怎么理解
+
+```hs
+prefixes :: [a] -> [[a]]
+prefixes =
+  foldr (\x acc -> [x] : (map ((:) x) acc)) []
+```
+
 ## 2020-11-30 09:48:20
+
+- @ques dataType 到底讲什么的 有什么用
+
+- @ques rev 怎么取数组的最后一个元素
+
+### end
+
+- @ques 整除的标示是什么
+
+  - `mod`
 
 - @ques
 
@@ -21,9 +41,6 @@ http://learnyouahaskell.com/chapters
     - `or [x]`只要数组中有一个为 true 就为 true
   - `n /= x`
     - 是不等于的意思吗, 应该是的
-
-- @ques 整除的标示是什么
-  - `mod`
 
 ## 2020-11-27 13:35:39
 

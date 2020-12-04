@@ -1,6 +1,37 @@
+## 反转数组
+
+```hs
+-- reverse list
+rev :: [a] -> [a]
+rev [] = []
+rev [x] = [x]
+rev arr = (last arr) : (rev $ init arr)
+
+-- foldl :: (a -> b -> a) -> a -> [b] -> a
+foldl (\acc x -> x : acc) []
+foldl (flip (:)) []
+
+
+-- prefixes
+prefixes :: [a] -> [[a]]
+prefixes = rev . addFix
+  where
+    addFix :: [a] -> [[a]]
+    addFix [] = []
+    addFix arr = arr : addFix (init arr)
+    rev :: [a] -> [a]
+    rev = foldl (\acc x -> x : acc) []
+
+prefixes :: [a] -> [[a]]
+prefixes =
+  foldr (\x acc -> [x] : (map ((:) x) acc)) []
+```
+
 ## 合并函数
 
 ```hs
+
+(f.g) = (f (g))
 
 map2D = map . map
 
