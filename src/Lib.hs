@@ -1,9 +1,15 @@
 module Lib (someFunc, in_range, boolToString) where
 
 -- someFunc :: Int
-someFunc = rev [1, 2, 3]
+-- someFunc = foldr (\x acc -> acc ++ (show x)) "--" [1, 2, 3]
+someFunc = foldl (\acc x -> acc ++ (show x)) "--" [1, 2, 3]
 
-test = map (:) [1, 2, 3]
+(((1 f "--") f 2) f 3)
+
+test :: Int -> IO String
+test i = do
+  putStrLn "Foo Function has run!"
+  return (show i)
 
 filter_odd :: [Int] -> [Int]
 filter_odd [] = []
@@ -63,7 +69,7 @@ hasPath nodes s e
 isAll e = foldr (\x -> (&&) $ x == e) True
 
 rev :: [a] -> [a]
-rev = foldl (flip (:)) []
+rev = foldl (\acc x -> x : acc) []
 
 mapTest f = foldr (\x -> ((:) . f) x) []
 

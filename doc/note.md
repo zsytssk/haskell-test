@@ -1,6 +1,15 @@
 https://www.youtube.com/watch?v=46dksIrx6jQ&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=11
 http://learnyouahaskell.com/chapters
 
+## 2020-12-04 09:56:48
+
+- @ques foldl 执行顺序
+  - `foldl (\acc x -> (show x) ++ acc) "" [1, 2, 3]`
+  - 按顺序一个接一个的执行
+  - `xn f x(n-1) f ... x2 f x1`
+
+怎么加载多个语句
+
 ## 2020-12-03 20:33:58
 
 - @ques 下面代码怎么理解

@@ -1,6 +1,8 @@
 ## 反转数组
 
 ```hs
+-- foldl (<+>) zz [a,b,c,d] = (((zz <+> a) <+> b) <+> c) <+> d
+-- foldr (<+>) zz [a,b,c,d] = a <+> (b <+> (c <+> (d <+> zz)))
 -- reverse list
 rev :: [a] -> [a]
 rev [] = []
