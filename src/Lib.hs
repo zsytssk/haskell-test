@@ -2,9 +2,7 @@ module Lib (someFunc, in_range, boolToString) where
 
 -- someFunc :: Int
 -- someFunc = foldr (\x acc -> acc ++ (show x)) "--" [1, 2, 3]
-someFunc = foldl (\acc x -> acc ++ (show x)) "--" [1, 2, 3]
-
-(((1 f "--") f 2) f 3)
+someFunc = (:) 1 [2]
 
 test :: Int -> IO String
 test i = do
@@ -75,7 +73,7 @@ mapTest f = foldr (\x -> ((:) . f) x) []
 
 prefixes :: [a] -> [[a]]
 prefixes =
-  foldr (\x -> (:) [x]) []
+  foldr (\x acc -> [x] : (map ((:) x) acc)) []
 
 -- prefixes :: [a] -> [[a]]
 -- prefixes =

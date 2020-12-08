@@ -1,6 +1,8 @@
+## fold
+
 ## 反转数组
 
-```hs
+````hs
 -- foldl (<+>) zz [a,b,c,d] = (((zz <+> a) <+> b) <+> c) <+> d
 -- foldr (<+>) zz [a,b,c,d] = a <+> (b <+> (c <+> (d <+> zz)))
 -- reverse list
@@ -14,6 +16,7 @@ foldl (\acc x -> x : acc) []
 foldl (flip (:)) []
 
 
+```hs
 -- prefixes
 prefixes :: [a] -> [[a]]
 prefixes = rev . addFix
@@ -27,7 +30,13 @@ prefixes = rev . addFix
 prefixes :: [a] -> [[a]]
 prefixes =
   foldr (\x acc -> [x] : (map ((:) x) acc)) []
-```
+
+-- (:) x [y] -> [x, y]
+-- map ((:) x) [[y], [z]] -> [[x, y], [x, z]]
+-- [1, 2, 3] --> map ((:) x) [] -> [] -> [[3]]
+    -- map ((:) 2) [[3]] -> [[2, 3]] -> [[2], [2, 3]]
+    -- map ((:) 1) [[2], [2,3]] -> [[1,2], [1,2,3]] -> [[1], [1,2], [1,2,3]]
+````
 
 ## 合并函数
 
