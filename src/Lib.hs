@@ -2,7 +2,7 @@ module Lib (someFunc, in_range, boolToString) where
 
 -- someFunc :: Int
 -- someFunc = foldr (\x acc -> acc ++ (show x)) "--" [1, 2, 3]
-someFunc = (:) 1 [2]
+someFunc = 1 (:) []
 
 test :: Int -> IO String
 test i = do
