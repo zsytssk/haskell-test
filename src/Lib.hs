@@ -1,13 +1,23 @@
 module Lib (someFunc, in_range, boolToString) where
 
+import Debug.Trace (traceShow)
+
 -- someFunc :: Int
 -- someFunc = foldr (\x acc -> acc ++ (show x)) "--" [1, 2, 3]
-someFunc = (:) 1 [2]
+someFunc = test 4 2 [1, 2, 3]
 
-test :: Int -> IO String
-test i = do
-  putStrLn "Foo Function has run!"
-  return (show i)
+-- someFunc = ((4 -1) / (3 -1)) * ((4 - 2) / (3 - 2)) * 1
+
+test :: Float -> Int -> [Float] -> Float
+test x j arr =
+  let xj = arr !! j
+   in let fArr = deleteAt j arr
+       in foldl (\acc t -> acc * ((x - t) / (xj - t))) 1 fArr
+
+deleteAt :: Int -> [a] -> [a]
+deleteAt idx xs = lft ++ rgt
+  where
+    (lft, (_ : rgt)) = splitAt idx xs
 
 filter_odd :: [Int] -> [Int]
 filter_odd [] = []
@@ -75,6 +85,5 @@ prefixes :: [a] -> [[a]]
 prefixes =
   foldr (\x acc -> [x] : (map ((:) x) acc)) []
 
--- prefixes :: [a] -> [[a]]
--- prefixes =
---   foldr (\x acc -> [x] : (map ((:) x) acc)) []
+-- lagrange :: [(Float, Float)] -> Float -> Float
+-- lagrange = flodr

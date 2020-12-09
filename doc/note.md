@@ -1,6 +1,31 @@
 https://www.youtube.com/watch?v=46dksIrx6jQ&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=11
 http://learnyouahaskell.com/chapters
 
+## 2020-12-09 09:31:29
+
+### end
+
+- @ques haskell 怎么在运行的过程中 print
+
+  - 这太不友好了
+  - trace
+
+- @ques lagrange
+
+  - 我怎么知道 xj
+  - fold 如何获取 arr 的 index
+
+- @ques 下面的语句有什么问题 因该是 3.0 怎么是 3.3333
+  - foldl 的参数顺序搞反了
+
+```hs
+test :: Float -> Int -> [Float] -> Float
+test x j arr =
+  let xj = arr !! j
+   in let fArr = deleteAt j arr
+      in foldl (\t acc -> ((x - t) / (xj - t)) * acc) 1 fArr
+```
+
 ## 2020-12-04 09:56:48
 
 - @ques foldl 执行顺序

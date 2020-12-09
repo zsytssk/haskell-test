@@ -1,4 +1,11 @@
-## fold
+## let
+
+```hs
+test :: Float -> Int -> [Float] -> Float
+test x j arr =
+  let xj = arr !! j
+   in foldl (\t acc -> ((x - t) / (xj - t)) * acc) 1 arr
+```
 
 ## 反转数组
 
