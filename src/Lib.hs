@@ -4,12 +4,17 @@ import Debug.Trace (traceShow)
 
 -- someFunc :: Int
 -- someFunc = foldr (\x acc -> acc ++ (show x)) "--" [1, 2, 3]
-someFunc = test 4 2 [1, 2, 3]
+someFunc = lt [(1, 2), (3, 4), (5, 6)]
 
 -- someFunc = ((4 -1) / (3 -1)) * ((4 - 2) / (3 - 2)) * 1
 
-test :: Float -> Int -> [Float] -> Float
-test x j arr =
+lt :: [(Float, Float)] -> Float
+lt arr =
+  let xarr = [x | (x, _) <- arr]
+   in foldl (\acc (x, y) -> y * (lj x 1 xarr) + acc) 0 arr
+
+lj :: Float -> Int -> [Float] -> Float
+lj x j arr =
   let xj = arr !! j
    in let fArr = deleteAt j arr
        in foldl (\acc t -> acc * ((x - t) / (xj - t))) 1 fArr

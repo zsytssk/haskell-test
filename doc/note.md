@@ -3,6 +3,8 @@ http://learnyouahaskell.com/chapters
 
 ## 2020-12-09 09:31:29
 
+- @ques 怎么 怎么把 (x, y) -> x
+
 ### end
 
 - @ques haskell 怎么在运行的过程中 print
