@@ -2,19 +2,20 @@ module Lib (someFunc, in_range, boolToString) where
 
 import Debug.Trace (traceShow)
 
-someFunc = lt 1 [(1, 2), (3, 4), (5, 6)]
+someFunc = lagrange [(1, 2), (3, 4), (5, 6)] 1
 
-lt :: Float -> [(Float, Float)] -> Float
-lt d arr =
-  let xarr = [x | (x, _) <- arr]
-   in let tarr = zip [0 .. length (arr) -1] arr
-       in foldl (\acc (index, (x, y)) -> y * (lj x index xarr) + acc) 0 tarr
-
-lj :: Float -> Int -> [Float] -> Float
-lj x j arr =
-  let xj = arr !! j
-   in let fArr = deleteAt j arr
-       in foldl (\acc t -> acc * ((x - t) / (xj - t))) 1 fArr
+lagrange :: [(Float, Float)] -> Float -> Float
+lagrange xs x = foldl (\acc (xj, y) -> acc + (y * l xj)) 0 xs
+  where
+    l xj =
+      foldl
+        ( \acc (xk, _) ->
+            if xj == xk
+              then acc
+              else acc * ((x - xk) / (xj - xk))
+        )
+        1
+        xs
 
 deleteAt :: Int -> [a] -> [a]
 deleteAt idx xs = lft ++ rgt
