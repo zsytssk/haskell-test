@@ -3,7 +3,13 @@ http://learnyouahaskell.com/chapters
 
 ## 2020-12-09 09:31:29
 
+- @ques haskell foldl get array index
+
+  - `zip [1 .. length (list)] list`
+
 - @ques 怎么 怎么把 (x, y) -> x
+
+- @ques foldl 怎么 获取 arr 的 index
 
 ### end
 

@@ -2,16 +2,13 @@ module Lib (someFunc, in_range, boolToString) where
 
 import Debug.Trace (traceShow)
 
--- someFunc :: Int
--- someFunc = foldr (\x acc -> acc ++ (show x)) "--" [1, 2, 3]
 someFunc = lt 1 [(1, 2), (3, 4), (5, 6)]
-
--- someFunc = ((4 -1) / (3 -1)) * ((4 - 2) / (3 - 2)) * 1
 
 lt :: Float -> [(Float, Float)] -> Float
 lt d arr =
   let xarr = [x | (x, _) <- arr]
-   in foldl (\acc (x, y) -> y * (lj x d xarr) + acc) 0 arr
+   in let tarr = zip [0 .. length (arr) -1] arr
+       in foldl (\acc (index, (x, y)) -> y * (lj x index xarr) + acc) 0 tarr
 
 lj :: Float -> Int -> [Float] -> Float
 lj x j arr =

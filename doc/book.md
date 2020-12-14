@@ -1,3 +1,22 @@
+## 2020-12-14 09:52:04
+
+```hs
+someFunc = lt 1 [(1, 2), (3, 4), (5, 6)]
+
+lagrange :: Float -> [(Float, Float)] -> Float
+lt d arr =
+  let xarr = [x | (x, _) <- arr]
+   in let tarr = zip [0 .. length (arr) -1] arr
+       in foldl (\acc (index, (x, y)) -> y * (lj x index xarr) + acc) 0 tarr
+
+lj :: Float -> Int -> [Float] -> Float
+lj x j arr =
+  let xj = arr !! j
+   in let fArr = deleteAt j arr
+       in foldl (\acc t -> acc * ((x - t) / (xj - t))) 1 fArr
+
+```
+
 ## let
 
 ```hs
