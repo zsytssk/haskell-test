@@ -1,6 +1,15 @@
 https://www.youtube.com/watch?v=46dksIrx6jQ&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=11
 http://learnyouahaskell.com/chapters
 
+## 2020-12-16 09:47:26
+
+- @ques data type
+
+- @ques 二叉树 遍历 方式 + 转化
+
+- @ques Leaf a | Node a 这玩意是什么意思
+  - 这样定义类型真奇怪... 也很强大
+
 ## 2020-12-09 09:31:29
 
 - @ques haskell foldl get array index

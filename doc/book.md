@@ -152,6 +152,17 @@ addTuples (t : tx) =
   let (x, y) = t in (x + y) + addTuples tx
 ```
 
+## 2020-12-16 09:44:24
+
+- deleteAt
+
+```hs
+deleteAt :: Int -> [a] -> [a]
+deleteAt idx xs = lft ++ rgt
+  where
+    (lft, (_ : rgt)) = splitAt idx xs
+```
+
 ## int to string
 
 show
