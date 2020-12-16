@@ -5,7 +5,7 @@ http://learnyouahaskell.com/chapters
 
 - @ques data type
 
-- @ques 二叉树 遍历 方式 + 转化
+- @todo 二叉树 遍历 方式 + 转化
 
 - @ques Leaf a | Node a 这玩意是什么意思
   - 这样定义类型真奇怪... 也很强大
