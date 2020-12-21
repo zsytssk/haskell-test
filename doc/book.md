@@ -1,3 +1,15 @@
+## 2020-12-17 09:36:08
+
+```hs
+data Trie a = Leaf a | Node a [Trie a]
+
+foldtrie :: (b -> a -> b) -> b -> Trie a -> b
+foldtrie f acc (Leaf x) = f acc x
+foldtrie f acc (Node x xs) = foldl f' (f acc x) xs
+  where
+    f' acc t = foldtrie f acc t
+```
+
 ## 2020-12-14 09:52:04
 
 - @ques
@@ -16,8 +28,6 @@ lj x j arr =
   let xj = arr !! j
    in let fArr = deleteAt j arr
        in foldl (\acc t -> acc * ((x - t) / (xj - t))) 1 fArr
-
-
 
 ```
 
