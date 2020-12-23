@@ -1,3 +1,14 @@
+## 2020-12-22 09:36:19
+
+```hs
+-- Records
+data Person = Person {name :: String, age :: Int}
+
+data Point
+  = D2 {x :: Int, y :: Int}
+  | D3 {x :: Int, y :: Int, z :: Int}
+```
+
 ## 2020-12-17 09:36:08
 
 ```hs

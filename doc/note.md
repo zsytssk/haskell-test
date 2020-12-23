@@ -1,8 +1,20 @@
-https://www.youtube.com/watch?v=46dksIrx6jQ&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=11
+https://www.youtube.com/watch?v=bv7aenMgSkg&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=16
 
 https://blog.csdn.net/My_Jobs/article/details/43451187
 
 http://learnyouahaskell.com/chapters
+
+- @todo 可以将自己的 haskell 的学习笔记放到 github 上
+
+## 2020-12-22 09:49:40
+
+- @ques IO() 函数 获得输入 传给其他变量？
+
+- @ques `:info Ord`
+
+  - class 语法
+
+- @ques derive typeClass
 
 ## 2020-12-16 09:47:26
 
