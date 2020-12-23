@@ -1,3 +1,19 @@
+## 2020-12-23 09:58:36
+
+- IO String -> String
+
+```hs
+import System.IO.Unsafe (unsafePerformIO)
+
+someFunc = unsafePerformIO $ greet
+
+greet :: IO String
+greet = do
+  putStrLn "what's your name?"
+  name <- getLine
+  return ("hello " ++ name)
+```
+
 ## 2020-12-22 09:36:19
 
 ```hs
