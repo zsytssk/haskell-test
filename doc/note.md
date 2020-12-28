@@ -1,4 +1,4 @@
-https://www.youtube.com/watch?v=bv7aenMgSkg&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=16
+https://www.youtube.com/watch?v=IBB7JpbClo8&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=17
 
 https://blog.csdn.net/My_Jobs/article/details/43451187
 
@@ -7,6 +7,12 @@ http://learnyouahaskell.com/chapters
 - @todo 可以将自己的 haskell 的学习笔记放到 github 上
 
 ## 2020-12-22 09:49:40
+
+- @ques 一个函数能不能支持不同的参数 (函数有不同的定义)
+
+- @ques
+
+- @ques typeClass https://www.youtube.com/watch?v=bv7aenMgSkg&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=16
 
 - @ques IO() 函数 获得输入 传给其他变量？
 

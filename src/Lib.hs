@@ -3,10 +3,7 @@ module Lib (someFunc) where
 import Debug.Trace (traceShow)
 import System.IO.Unsafe (unsafePerformIO)
 
-someFunc = unsafePerformIO $ greet
+someFunc = maybeAdd (Just 1) (Nothing)
 
-greet :: IO String
-greet = do
-  putStrLn "what's your name?"
-  name <- getLine
-  return ("hello " ++ name)
+maybeAdd :: (Monad m, Num b) => m b -> m b -> m b
+maybeAdd mx my = mx >>= (\x -> my >>= (\y -> return $ x + y))
