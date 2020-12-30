@@ -5,7 +5,7 @@ import Lib (someFunc)
 
 main :: IO ()
 main =
-  myPrint (someFunc)
+  print (someFunc)
 
 myPrint :: Show a => Maybe a -> IO ()
 myPrint (Just x) = print $ "Just " ++ (show x)

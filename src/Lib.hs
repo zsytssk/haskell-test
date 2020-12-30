@@ -3,7 +3,8 @@ module Lib (someFunc) where
 import Debug.Trace (traceShow)
 import System.IO.Unsafe (unsafePerformIO)
 
-someFunc = maybeAdd (Just 1) (Nothing)
+someFunc = take 5 nat
 
-maybeAdd :: (Monad m, Num b) => m b -> m b -> m b
-maybeAdd mx my = mx >>= (\x -> my >>= (\y -> return $ x + y))
+ones = 1 : ones
+
+nat = asc 1 where asc n = n : (asc $ n + 1)

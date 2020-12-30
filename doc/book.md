@@ -1,3 +1,10 @@
+## 2020-12-28 09:47:22
+
+```ts
+maybeAdd :: (Monad m, Num b) => m b -> m b -> m b
+maybeAdd mx my = mx >>= (\x -> my >>= (\y -> return $ x + y))
+```
+
 ## 2020-12-23 09:58:36
 
 - IO String -> String
