@@ -6,6 +6,10 @@ http://learnyouahaskell.com/chapters
 
 - @todo 可以将自己的 haskell 的学习笔记放到 github 上
 
+## 2020-12-31 09:55:36
+
+- @ques 怎么取 Tree 中的元素...
+
 ## 2020-12-22 09:49:40
 
 - @ques zipWith
