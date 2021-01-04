@@ -10,6 +10,12 @@ http://learnyouahaskell.com/chapters
 
 - @ques 怎么取 Tree 中的元素...
 
+### end
+
+- ques 如何 show Tree
+
+  - deriving
+
 ## 2020-12-22 09:49:40
 
 - @ques zipWith
