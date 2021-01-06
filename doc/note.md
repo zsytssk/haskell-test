@@ -10,6 +10,9 @@ http://learnyouahaskell.com/chapters
 
 - @ques 怎么取 Tree 中的元素...
 
+- @ques 怎么插入在 leaf 中插入一个值
+  - 怎么改变原来的节点...
+
 ### end
 
 - ques 如何 show Tree
