@@ -1,6 +1,6 @@
 ## 2020-12-28 09:47:22
 
-```ts
+```hs
 maybeAdd :: (Monad m, Num b) => m b -> m b -> m b
 maybeAdd mx my = mx >>= (\x -> my >>= (\y -> return $ x + y))
 ```

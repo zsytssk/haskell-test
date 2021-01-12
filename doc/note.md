@@ -6,6 +6,16 @@ http://learnyouahaskell.com/chapters
 
 - @todo 可以将自己的 haskell 的学习笔记放到 github 上
 
+## 2021-01-12 09:29:28
+
+- @ques 如何获得多个输出
+  - for 循环？
+
+### end
+
+- @ques 如何 putStr 之后再 getLine
+  - do
+
 ## 2020-12-31 09:55:36
 
 - @ques 怎么取 Tree 中的元素...
