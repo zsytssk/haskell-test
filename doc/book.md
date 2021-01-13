@@ -1,3 +1,18 @@
+## 2021-01-13 10:01:45
+
+从命令行获取多个输入字符
+
+```hs
+getLineMulti :: IO [String]
+getLineMulti = do
+  name <- getLine
+  if name == ""
+    then return []
+    else do
+      x <- getLineMulti
+      return $ name : x
+```
+
 ## 2020-12-28 09:47:22
 
 ```hs

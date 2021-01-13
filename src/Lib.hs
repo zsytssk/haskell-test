@@ -13,7 +13,7 @@ import System.IO.Unsafe (unsafePerformIO)
 -- putStrLn :: String -> IO ()
 -- getLine ::  IO String
 
-someFunc = getLineMuli
+someFunc = unsafePerformIO $ getLineMuli
 
 test :: FilePath -> IO String
 test path = do
@@ -21,7 +21,11 @@ test path = do
   name <- getLine
   return ("hello " ++ name)
 
-getLineMuli :: IO [String]
-getLineMuli = do
+getLineMulti :: IO [String]
+getLineMulti = do
   name <- getLine
-  if name /= "" then return [name] ++ [] else return []
+  if name == ""
+    then return []
+    else do
+      x <- getLineMulti
+      return $ name : x
