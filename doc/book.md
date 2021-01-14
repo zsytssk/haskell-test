@@ -11,6 +11,13 @@ getLineMulti = do
     else do
       x <- getLineMulti
       return $ name : x
+
+
+readFileStr :: FilePath -> IO String
+readFileStr path = do
+  a <- (readFile path)
+  return a
+
 ```
 
 ## 2020-12-28 09:47:22

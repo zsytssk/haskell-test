@@ -9,7 +9,12 @@ http://learnyouahaskell.com/chapters
 ## 2021-01-12 09:29:28
 
 - @ques 如何获得多个输出
+
   - for 循环？
+
+- @ques 如何 for 循环一个数组
+
+- Couldn't match type ‘[]’ with ‘IO’
 
 ### end
 
