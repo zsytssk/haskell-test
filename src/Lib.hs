@@ -1,5 +1,6 @@
 module Lib (someFunc) where
 
+import Data.Char
 import Data.List hiding (insert)
 import Data.Maybe
 import Debug.Trace (traceShow)
@@ -17,7 +18,15 @@ import System.IO.Unsafe (unsafePerformIO)
 -- someFunc = findString "is" "this is a test"
 
 -- someFunc = tails "this is a test"
-someFunc = unsafePerformIO $ findStr
+someFunc = map lower $ words "sdfsdfsdfds sfsdfdsfsd vsdfdsfsdfds 👌 \n sdfsdfdsfds"
+
+test :: String -> String
+test str = filter (\x -> isLetter x || isSpace x) str
+
+lower :: String -> String
+lower = map toLower
+
+data SomeData = Either Int String
 
 findStr = do
   list <- getLineMulti

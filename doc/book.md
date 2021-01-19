@@ -1,22 +1,31 @@
 ## 2021-01-13 10:01:45
 
-从命令行获取多个输入字符
-
 ```hs
-getLineMulti :: IO [String]
-getLineMulti = do
-  name <- getLine
-  if name == ""
-    then return []
-    else do
-      x <- getLineMulti
-      return $ name : x
+-- 找寻匹配
+findStr = do
+  list <- getLineMulti
+  con <- readFileStr "./LICENSE"
+  print $ map (findString con) list
+  return ""
 
-
+-- 读取文件
 readFileStr :: FilePath -> IO String
 readFileStr path = do
   a <- (readFile path)
   return a
+
+-- 从命令行获取多个输入字符
+getLineMulti :: IO [String]
+getLineMulti = do
+  name <- getLine
+  if name /= ""
+    then do
+      x <- getLineMulti
+      return $ name : x
+    else return []
+
+findString :: (Eq a) => [a] -> [a] -> Int
+findString str search = fromMaybe (-1) $ findIndex (isPrefixOf search) (tails str)
 
 ```
 
@@ -74,7 +83,7 @@ foldtrie f acc (Node x xs) = foldl f' (f acc x) xs
 someFunc = lagrange [(1, 2), (3, 4), (5, 6)] 1
 
 lagrange ::  [(Float, Float)] -> Float -> Float
-lagrange d arr =
+lagrange arr d  =
   let xarr = [x | (x, _) <- arr]
    in let tarr = zip [0 .. length (arr) -1] arr
        in foldl (\acc (index, (x, y)) -> y * (lj d index xarr) + acc) 0 tarr
