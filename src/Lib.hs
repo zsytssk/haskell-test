@@ -1,54 +1,23 @@
 module Lib (someFunc) where
 
-import Data.Char
-import Data.List hiding (insert)
-import Data.Maybe
-import Debug.Trace (traceShow)
+import System.Environment
+import System.Exit
 import System.IO.Unsafe (unsafePerformIO)
 
---  unsafePerformIO $ readFile path
--- unsafePerformIO $ getLine
+someFunc = unsafePerformIO $ printHelp
 
--- hSetBuffering stdout NoBuffering
--- readFile :: FilePath -> IO String
--- putStr :: String -> IO ()
--- putStrLn :: String -> IO ()
--- getLine ::  IO String
+mainAct [] = do
+  putStrLn "Needs a greeting!"
+  printHelp
+  exitFailure
+mainAct args = do
+  let greeting = unwords args
+  name <- lookupEnv "USER"
+  putStrLn $ maybe "no user to greet!" (\name -> greeting ++ "" ++ name) name
 
--- someFunc = findString "is" "this is a test"
+printHelp = do
+  progName <- getProgName
+  putStrLn progName
 
--- someFunc = tails "this is a test"
-someFunc = map lower $ words "sdfsdfsdfds sfsdfdsfsd vsdfdsfsdfds 👌 \n sdfsdfdsfds"
-
-test :: String -> String
-test str = filter (\x -> isLetter x || isSpace x) str
-
-lower :: String -> String
-lower = map toLower
-
-data SomeData = Either Int String
-
-findStr = do
-  list <- getLineMulti
-  con <- readFileStr "./LICENSE"
-  print $ map (findString con) list
-  return ""
-
--- return []
-
-readFileStr :: FilePath -> IO String
-readFileStr path = do
-  a <- (readFile path)
-  return a
-
-getLineMulti :: IO [String]
-getLineMulti = do
-  name <- getLine
-  if name /= ""
-    then do
-      x <- getLineMulti
-      return $ name : x
-    else return []
-
-findString :: (Eq a) => [a] -> [a] -> Int
-findString str search = fromMaybe (-1) $ findIndex (isPrefixOf search) (tails str)
+printVersion = do
+  putStrLn "v1"

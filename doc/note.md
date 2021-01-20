@@ -6,7 +6,13 @@ http://learnyouahaskell.com/chapters
 
 - @todo 可以将自己的 haskell 的学习笔记放到 github 上
 
+## 2021-01-20 09:51:14
+
+- printHelp >> exitSuccess
+
 ## 2021-01-12 09:29:28
+
+- @ques get data from environment
 
 - @ques 如何获得多个输出
 
