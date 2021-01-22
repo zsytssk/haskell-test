@@ -1,10 +1,17 @@
-https://www.youtube.com/watch?v=lmBA7tEyr7U&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=24
+https://www.youtube.com/watch?v=j19amq73-qA&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=26
 
 https://blog.csdn.net/My_Jobs/article/details/43451187
 
 http://learnyouahaskell.com/chapters
 
 - @todo 可以将自己的 haskell 的学习笔记放到 github 上
+
+## 2021-01-22 09:31:46
+
+- @ques 怎么编译整个项目
+
+- stack ghc -- --make ./app/Main.hs -o test
+- stack ghc -- --make -i ./src/Lib.hs ./app/Main.hs -o test
 
 ## 2021-01-20 09:51:14
 
