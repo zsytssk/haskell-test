@@ -1,10 +1,14 @@
-https://www.youtube.com/watch?v=j19amq73-qA&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=26
+https://www.youtube.com/watch?v=cuHD2qTXxL4&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=28
 
 https://blog.csdn.net/My_Jobs/article/details/43451187
 
 http://learnyouahaskell.com/chapters
 
 - @todo 可以将自己的 haskell 的学习笔记放到 github 上
+
+## 2021-01-26 09:35:05
+
+class 是什么东西
 
 ## 2021-01-22 09:31:46
 
