@@ -6,9 +6,13 @@ http://learnyouahaskell.com/chapters
 
 - @todo 可以将自己的 haskell 的学习笔记放到 github 上
 
+## 2021-01-28 10:12:06
+
+- @todo multi thread 依次进行
+
 ## 2021-01-26 09:35:05
 
-class 是什么东西
+- @ques class 是什么东西
 
 ## 2021-01-22 09:31:46
 
