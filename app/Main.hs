@@ -12,14 +12,16 @@ getGreeting = do
   let greeting = "Hello from" ++ show tid
   return $! greeting
 
-threadHello :: IO ()
-threadHello = do
+threadHello :: Chan () -> IO ()
+threadHello endFlags = do
   greeting <- getGreeting
-  -- putStrLn greeting
-  print greeting
+  putStrLn greeting
+  writeChan endFlags ()
 
 main :: IO ()
 main = do
   hSetBuffering stdout NoBuffering
-  forkIO threadHello
+  endFlags <- newChan
+  forkIO $ threadHello endFlags
+  mapM_ (\_ -> readChan endFlags) [1 .. 2]
   return ()
