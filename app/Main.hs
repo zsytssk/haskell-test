@@ -12,16 +12,20 @@ getGreeting = do
   let greeting = "Hello from" ++ show tid
   return $! greeting
 
-threadHello :: Chan () -> IO ()
-threadHello endFlags = do
+threadHello :: MVar () -> Chan () -> IO ()
+threadHello mutex endFlags = do
   greeting <- getGreeting
+  takeMVar mutex
   putStrLn greeting
+  putMVar mutex ()
   writeChan endFlags ()
 
 main :: IO ()
 main = do
   hSetBuffering stdout NoBuffering
+  let n = 10
+  mutex <- newEmptyMVar
   endFlags <- newChan
-  forkIO $ threadHello endFlags
-  mapM_ (\_ -> readChan endFlags) [1 .. 2]
-  return ()
+  mapM_ (const $ forkIO $ threadHello mutex endFlags) [1 .. n]
+  putMVar mutex ()
+  mapM_ (const $ readChan endFlags) [1 .. n]
