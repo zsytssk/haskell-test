@@ -1,4 +1,4 @@
-https://www.youtube.com/watch?v=cuHD2qTXxL4&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=28
+https://www.youtube.com/watch?v=x3GwVccWcqs&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=29
 
 https://blog.csdn.net/My_Jobs/article/details/43451187
 
@@ -7,6 +7,8 @@ http://learnyouahaskell.com/chapters
 - @todo 可以将自己的 haskell 的学习笔记放到 github 上
 
 ## 2021-01-28 10:12:06
+
+### end
 
 - @todo multi thread 依次进行
 
