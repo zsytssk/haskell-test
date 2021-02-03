@@ -3,30 +3,26 @@ module Main where
 -- import Lib (boolToString, in_range, someFunc)
 
 import Control.Concurrent
+import Control.Concurrent.STM
 import Lib (someFunc)
 import System.IO
 
-getGreeting :: IO String
-getGreeting = do
-  tid <- myThreadId
-  let greeting = "Hello from" ++ show tid
-  return $! greeting
+type Result = TVar (Int, Int)
 
-threadHello :: QSem -> QSemN -> IO ()
-threadHello mutex endFlags = do
-  greeting <- getGreeting
-  waitQSem mutex
-  putStrLn greeting
-  signalQSem mutex
-  signalQSemN endFlags 1
+addResult :: Result -> Int -> STM ()
+addResult result x = do
+  (sum, endCtrl) <- readTVar result
+  writeTVar result (sum + x, endCtrl + 1)
+
+waitForCounter :: Result -> Int -> STM Int
+waitForCounter result limit = do
+  (sum, endCtrl) <- readTVar result
+  if endCtrl < limit then retry else return sum
 
 main :: IO ()
 main = do
-  hSetBuffering stdout NoBuffering
-  let n = 10
-  mutex <- newQSem 0
-  endFlags <- newQSemN 0
-  mapM_ (const $ forkIO $ threadHello mutex endFlags) [1 .. n]
-  signalQSem mutex
-  -- mapM_ (const $ readChan endFlags) [1 .. n]
-  waitQSemN endFlags n
+  let n = 100
+  result <- atomically $ newTVar (0, 0)
+  mapM_ (\x -> forkIO $ atomically $ addResult result x) [1 .. n]
+  sum <- atomically $ waitForCounter result n
+  putStrLn $ "Sum [1.. n] = " ++ show sum
