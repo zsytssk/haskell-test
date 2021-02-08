@@ -2,27 +2,18 @@ module Main where
 
 -- import Lib (boolToString, in_range, someFunc)
 
-import Control.Concurrent
-import Control.Concurrent.STM
-import Lib (someFunc)
-import System.IO
+import Control.DeepSeq
+import Control.Exception (evaluate)
 
-type Result = TVar (Int, Int)
+something :: Int -> [Int]
+something x = map (* 2) [1 .. x]
 
-addResult :: Result -> Int -> STM ()
-addResult result x = do
-  (sum, endCtrl) <- readTVar result
-  writeTVar result (sum + x, endCtrl + 1)
-
-waitForCounter :: Result -> Int -> STM Int
-waitForCounter result limit = do
-  (sum, endCtrl) <- readTVar result
-  if endCtrl < limit then retry else return sum
+somethingIO :: Int -> IO [Int]
+somethingIO x = do
+  return $!! map (* 2) [1 .. x]
 
 main :: IO ()
 main = do
-  let n = 100
-  result <- atomically $ newTVar (0, 0)
-  mapM_ (\x -> forkIO $ atomically $ addResult result x) [1 .. n]
-  sum <- atomically $ waitForCounter result n
-  putStrLn $ "Sum [1.. n] = " ++ show sum
+  result1 <- evaluate $ force $ something 100
+  result2 <- somethingIO 100
+  return ()

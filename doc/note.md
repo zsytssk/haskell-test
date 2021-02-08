@@ -1,10 +1,14 @@
-https://www.youtube.com/watch?v=QBQ9_9R7o8I&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=31
+https://www.youtube.com/watch?v=eAcNGbnuTYs&list=PLe7Ei6viL6jGp1Rfu0dil1JH1SHk9bgDV&index=32
 
 https://blog.csdn.net/My_Jobs/article/details/43451187
 
 http://learnyouahaskell.com/chapters
 
 - @todo 可以将自己的 haskell 的学习笔记放到 github 上
+
+## 2021-02-07 09:37:47
+
+- @ques whnf nf 是什么意思
 
 ## 2021-01-28 10:12:06
 
