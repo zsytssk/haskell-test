@@ -1,19 +1,13 @@
-module Main where
-
--- import Lib (boolToString, in_range, someFunc)
-
 import Control.DeepSeq
-import Control.Exception (evaluate)
 
-something :: Int -> [Int]
-something x = map (* 2) [1 .. x]
+data Peano = Succ Peano | Zero deriving (Show)
 
-somethingIO :: Int -> IO [Int]
-somethingIO x = do
-  return $!! map (* 2) [1 .. x]
+add :: Peano -> Peano -> Peano
+add Zero a = a
+add (Succ a) b = add a (Succ b)
 
-main :: IO ()
-main = do
-  result1 <- evaluate $ force $ something 100
-  result2 <- somethingIO 100
-  return ()
+five = Succ $ Succ $ Succ $ Succ $ Succ $ Succ Zero
+
+instance NFData Peano where
+  rnf Zero = ()
+  rnf (Succ a) = rnf a
