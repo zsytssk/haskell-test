@@ -1,13 +1,15 @@
 import Control.DeepSeq
+import Control.Exception (evaluate)
 
-data Peano = Succ Peano | Zero deriving (Show)
+something :: Int -> [Int]
+something x = map (* 2) [1 .. x]
 
-add :: Peano -> Peano -> Peano
-add Zero a = a
-add (Succ a) b = add a (Succ b)
+somethingIO :: Int -> IO [Int]
+somethingIO x = do
+  return $!! map (* 2) [1 .. x]
 
-five = Succ $ Succ $ Succ $ Succ $ Succ $ Succ Zero
-
-instance NFData Peano where
-  rnf Zero = ()
-  rnf (Succ a) = rnf a
+main :: IO ()
+main = do
+  result <- evaluate $ force $ something 1000000
+  result <- somethingIO 1000000
+  return ()
