@@ -6,6 +6,14 @@ http://learnyouahaskell.com/chapters
 
 - @todo 可以将自己的 haskell 的学习笔记放到 github 上
 
+## 2021-02-20 09:54:19
+
+- @ques 如何检测 stack run 的时间消耗
+
+## 2021-02-20 09:34:12
+
+- @ques stack cabal install parallel
+
 ## 2021-02-07 09:37:47
 
 - @ques whnf nf 是什么意思

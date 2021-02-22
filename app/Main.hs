@@ -1,15 +1,29 @@
-import Control.DeepSeq
-import Control.Exception (evaluate)
+import Control.Parallel.Strategies
 
-something :: Int -> [Int]
-something x = map (* 2) [1 .. x]
-
-somethingIO :: Int -> IO [Int]
-somethingIO x = do
-  return $!! map (* 2) [1 .. x]
+fib :: Int -> Int
+fib 0 = 0
+fib 1 = 1
+fib n = fib (n - 1) + fib (n - 2)
 
 main :: IO ()
 main = do
-  result <- evaluate $ force $ something 1000000
-  result <- somethingIO 1000000
-  return ()
+  let (a, b) = runEval $ do
+        a <- rpar $ fib 38
+        b <- rpar $ fib 37
+        rseq a
+        rseq b
+        return (a, b)
+  putStrLn $ show (a, b)
+
+-- import Control.Parallel.Strategies
+
+-- fib :: Int -> Int
+-- fib 0 = 0
+-- fib 1 = 1
+-- fib n = fib (n - 1) + fib (n - 2)
+
+-- main :: IO ()
+-- main = do
+--   let a = fib 37
+--   let b = fib 37
+--   putStrLn $ show (a, b)
