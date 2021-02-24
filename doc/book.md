@@ -1,3 +1,9 @@
+## 2021-02-24 09:40:25
+
+```bash
+stack exec -- ghc -prof -fprof-auto app/Main.hs && app/Main +RTS -p
+```
+
 ## 2021-01-13 10:01:45
 
 ```hs

@@ -1,0 +1,30 @@
+	Wed Feb 24 09:55 2021 Time and Allocation Profiling Report  (Final)
+
+	   Main +RTS -p -RTS
+
+	total time  =        0.03 secs   (32 ticks @ 1000 us, 1 processor)
+	total alloc =  52,545,272 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE    SRC                         %time %alloc
+
+delete      Main      app/Main.hs:(4,1)-(5,58)     68.8   60.8
+sort.x'     Main      app/Main.hs:12:5-23          28.1   38.1
+main        Main      app/Main.hs:(16,1)-(17,46)    3.1    0.6
+
+
+                                                                                 individual      inherited
+COST CENTRE  MODULE                SRC                        no.     entries  %time %alloc   %time %alloc
+
+MAIN         MAIN                  <built-in>                 119          0    0.0    0.0   100.0  100.0
+ CAF         Main                  <entire-module>            237          0    0.0    0.0    96.9   99.9
+  main       Main                  app/Main.hs:(16,1)-(17,46) 238          1    0.0    0.6    96.9   99.9
+   sort      Main                  app/Main.hs:(8,1)-(13,28)  240       1000    0.0    0.4    96.9   99.3
+    sort.x'  Main                  app/Main.hs:12:5-23        241        999   28.1   38.1    28.1   38.1
+    sort.xs' Main                  app/Main.hs:13:5-28        242        999    0.0    0.0    68.8   60.9
+     delete  Main                  app/Main.hs:(4,1)-(5,58)   243     500499   68.8   60.8    68.8   60.8
+ CAF         GHC.Conc.Signal       <entire-module>            215          0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Encoding       <entire-module>            197          0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Encoding.Iconv <entire-module>            195          0    0.0    0.0     0.0    0.0
+ CAF         GHC.IO.Handle.FD      <entire-module>            186          0    0.0    0.1     0.0    0.1
+ CAF         GHC.IO.Handle.Text    <entire-module>            184          0    0.0    0.0     0.0    0.0
+ main        Main                  app/Main.hs:(16,1)-(17,46) 239          0    3.1    0.0     3.1    0.0

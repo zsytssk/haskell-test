@@ -1,29 +1,17 @@
-import Control.Parallel.Strategies
+import Data.List (reverse)
 
-fib :: Int -> Int
-fib 0 = 0
-fib 1 = 1
-fib n = fib (n - 1) + fib (n - 2)
+delete :: (Eq a) => [a] -> a -> [a]
+delete [] _ = []
+delete (x : xs) d = if x == d then xs else x : delete xs d
+
+sort :: (Ord a, Eq a) => [a] -> [a]
+sort [] = []
+sort [x] = [x]
+sort (x : xs) = x' : sort xs'
+  where
+    x' = foldl min x xs
+    xs' = delete (x : xs) x'
 
 main :: IO ()
 main = do
-  let (a, b) = runEval $ do
-        a <- rpar $ fib 38
-        b <- rpar $ fib 37
-        rseq a
-        rseq b
-        return (a, b)
-  putStrLn $ show (a, b)
-
--- import Control.Parallel.Strategies
-
--- fib :: Int -> Int
--- fib 0 = 0
--- fib 1 = 1
--- fib n = fib (n - 1) + fib (n - 2)
-
--- main :: IO ()
--- main = do
---   let a = fib 37
---   let b = fib 37
---   putStrLn $ show (a, b)
+  putStrLn $ show $ sort $ reverse [1 .. 1000]
