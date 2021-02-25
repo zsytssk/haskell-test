@@ -6,6 +6,11 @@ http://learnyouahaskell.com/chapters
 
 - @todo 可以将自己的 haskell 的学习笔记放到 github 上
 
+## 2021-02-25 09:59:45
+
+- @ques 怎么运行 hp2ps
+  - stack 不带这玩意...
+
 ## 2021-02-20 09:54:19
 
 - @ques 如何检测 stack run 的时间消耗

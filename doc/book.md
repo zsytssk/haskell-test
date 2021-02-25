@@ -2,6 +2,7 @@
 
 ```bash
 stack exec -- ghc -prof -fprof-auto app/Main.hs && app/Main +RTS -p
+stack exec -- ghc -prof -fprof-auto app/Main.hs && app/Main +RTS -h
 ```
 
 ## 2021-01-13 10:01:45

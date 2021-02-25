@@ -1,17 +1,16 @@
-import Data.List (reverse)
+import Control.DeepSeq (force)
+import Control.Exception (evaluate)
+import Data.List
 
-delete :: (Eq a) => [a] -> a -> [a]
-delete [] _ = []
-delete (x : xs) d = if x == d then xs else x : delete xs d
+xs :: [Int]
+xs = [1 .. 10000000]
 
-sort :: (Ord a, Eq a) => [a] -> [a]
-sort [] = []
-sort [x] = [x]
-sort (x : xs) = x' : sort xs'
-  where
-    x' = foldl min x xs
-    xs' = delete (x : xs) x'
+f = foldl (+) 0 xs
+
+g = foldl' (+) 0 xs
 
 main :: IO ()
 main = do
-  putStrLn $ show $ sort $ reverse [1 .. 1000]
+  evaluate $ force xs
+  putStrLn $ show f
+  putStrLn $ show g
