@@ -1,16 +1,23 @@
-import Control.DeepSeq (force)
-import Control.Exception (evaluate)
-import Data.List
+import Control.Concurrent
+import Control.Concurrent.STM
+import System.IO
 
-xs :: [Int]
-xs = [1 .. 10000000]
+type Result = TVar (Int, Int)
 
-f = foldl (+) 0 xs
+addToResult :: Result -> Int -> STM ()
+addToResult result x = do
+  (sum, endCtrl) <- readTVar result
+  writeTVar result (sum + x, endCtrl + 1)
 
-g = foldl' (+) 0 xs
+waitForCounter :: Result -> Int -> STM Int
+waitForCounter result limit = do
+  (sum, endCtrl) <- readTVar result
+  if endCtrl < limit then retry else return sum
 
 main :: IO ()
 main = do
-  evaluate $ force xs
-  putStrLn $ show f
-  putStrLn $ show g
+  let n = 1000000
+  result <- atomically $ newTVar (0, 0)
+  mapM_ (\x -> forkIO $ atomically $ addToResult result x) [1 .. n]
+  sum <- atomically $ waitForCounter result n
+  putStrLn $ "Sum [1..n] = " ++ show sum
